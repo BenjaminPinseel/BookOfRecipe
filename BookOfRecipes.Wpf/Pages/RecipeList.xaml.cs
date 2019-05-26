@@ -33,7 +33,8 @@ namespace BookOfRecipes.Wpf
         private void Initialize()
         {
             InitializeComponent();
-            lstRecipeList.ItemsSource = data.Recipes;
+            lstRecipeList.ItemsSource = data.Recipes;  
+            
         }
         
         // TODO: add git
