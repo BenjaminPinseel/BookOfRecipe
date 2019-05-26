@@ -37,7 +37,7 @@ namespace BookOfRecipes.Wpf.Pages
             }
         }
 
-        private void AddIngredient_Click(object sender, RoutedEventArgs e)
+        private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
             data.Ingredients.Add(newIngredient);
             navigationService.Navigate(new IngredientList(data));

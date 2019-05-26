@@ -35,6 +35,6 @@
                 <Label Content="Prijs" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
             <TextBox x:Name="txtPrice" Height="30" Width="450" HorizontalAlignment="Left" Margin="0,20,10,0" Text="{Binding Price}" TextChanged="TextField_Changed"/>
             </StackPanel>
-        <Button x:Name="btnAddIngredient" Content="Opslaan" Margin="0,20,0,0" Click="AddIngredient_Click" />
+        <Button x:Name="btnAddIngredient" Content="Opslaan" Margin="0,20,0,0" Click="btnAddIngredient_Click" />
         </StackPanel>
 </Page>
