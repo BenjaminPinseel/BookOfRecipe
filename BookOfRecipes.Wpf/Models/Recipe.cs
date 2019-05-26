@@ -10,20 +10,26 @@ namespace BookOfRecipes.Wpf.Models
     public class Recipe
     {
         public string Name { get; set; }
-        public Price PriceRange { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
-        public int Carbs { get; private set; }
-        public int Calories { get; private set; }
-        public int Proteins { get; private set; }
-        public int Fat { get; private set; }
+        public string Description { get; set; }
+        public List<IngredientAmount> Ingredients { get; set; }
+
+        public string Price
+        {
+            get { return "€€€"; }
+        }
+
+        public int Carbs { get; }
+        public int Calories { get;  }
+        public int Proteins { get; }
+        public int Fat { get; }
 
         // Voor json
         public Recipe() { }
 
-        public Recipe(string name, Price priceRange, List<Ingredient> ingredients)
+        public Recipe(string name, string description, List<IngredientAmount> ingredients)
         {
             Name = name;
-            PriceRange = priceRange;
+            Description = description;
             Ingredients = ingredients;
         }
     }

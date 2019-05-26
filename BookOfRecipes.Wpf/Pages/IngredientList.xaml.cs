@@ -33,12 +33,14 @@ namespace BookOfRecipes.Wpf
         {
             InitializeComponent();
             lstIngredientsList.ItemsSource = data.Ingredients;
+            btnDeleteIngredient.IsEnabled = false;
         }
 
         private void LstIngredientsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedIngredient = (Ingredient)lstIngredientsList.SelectedItem;
             stpIngredientStack.DataContext = selectedIngredient;
+            btnDeleteIngredient.IsEnabled = selectedIngredient != null;
         }
 
         private void DeleteIngredient_Click(object sender, RoutedEventArgs e)

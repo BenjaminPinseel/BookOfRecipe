@@ -6,25 +6,48 @@
       xmlns:local="clr-namespace:BookOfRecipes.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RecipeList">
+      Title="RecipeList"
+      Width="1000"
+      Height="925">
 
     <StackPanel Height="925" Orientation="Horizontal">
-        <ListView x:Name="lstRecipeList" HorizontalAlignment="Left" Width="240" Height="925" VerticalAlignment="Top">
+        <ListView x:Name="lstRecipeList" HorizontalAlignment="Left" Width="240" Height="925" VerticalAlignment="Top" 
+                  SelectionChanged="LstRecipeList_OnSelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Naam" Width="120" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Prijs" Width="120" DisplayMemberBinding="{Binding PriceRange}"/>
+                    <GridViewColumn Header="Naam" Width="240" DisplayMemberBinding="{Binding Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Width="562" Height="925">
-            <Label FontSize="25" HorizontalAlignment="Center">Ingredienten:</Label>
-            <Label>Koolhydraten:</Label>
-            <Label>Eiwitten</Label>
-            <Label></Label>
-            <Label></Label>
-            <Label></Label>
-            <Label></Label>
+        <StackPanel x:Name="stpRecipeDetail" Width="562" Height="925">
+            <Label Content="Recept" FontSize="30" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Naam" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                <TextBox Text="{Binding Name}" Height="30" HorizontalAlignment="Right" Width="450" 
+                         Margin="0,20,10,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Beschrijving" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                <TextBox Text="{Binding Description}" Height="30" HorizontalAlignment="Right" Width="450" 
+                         Margin="0,20,10,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ingredients:" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                <ListView x:Name="listIngredientPerRecipeList" Margin="0,20,10,0" Width="450">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="{Binding Ingredient.Name}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Amount}"/>
+                                    <Label Content="{Binding Unit}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Page>

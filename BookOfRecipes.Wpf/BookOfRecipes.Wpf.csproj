@@ -60,6 +60,7 @@
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Enums\Price.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\IngredientAmount.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Pages\IngredientList.xaml.cs">
       <DependentUpon>IngredientList.xaml</DependentUpon>

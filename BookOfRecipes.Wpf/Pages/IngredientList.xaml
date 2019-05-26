@@ -18,30 +18,30 @@
             </ListView.View>
         </ListView>
         <StackPanel x:Name="stpIngredientStack" Width="760" Height="925" Margin="245,0,193,0" Orientation="Vertical">
-            <Label Content="Ingredient Detail" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Ingredient" FontSize="30" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Naam" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <TextBox x:Name="lblName" Text="{Binding Name}" Height="30" HorizontalAlignment="Right" Width="450" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Name}" Height="30" HorizontalAlignment="Right" Width="450" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Calorieën" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
-                <TextBox x:Name="txtCalories" Text="{Binding Calories}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Calories}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Koolhydraten" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
-                <TextBox x:Name="txtCarbs" Text="{Binding Carbs}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Carbs}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Eiwitten" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
-                <TextBox x:Name="txtProteins" Text="{Binding Proteins}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Proteins}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Vetten" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
-                <TextBox x:Name="txtFat" Text="{Binding Fat}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Fat}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Prijs" Height="30" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"/>
-                <TextBox x:Name="txtPriceRange" Text="{Binding Price}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
+                <TextBox Text="{Binding Price}" Height="30" Width="450" HorizontalAlignment="Right" Margin="0,20,10,0" IsEnabled="False"/>
             </StackPanel>
             <Button x:Name="btnDeleteIngredient" Content="Verwijder" Margin="100,20,210,0" Click="DeleteIngredient_Click" />
         </StackPanel>

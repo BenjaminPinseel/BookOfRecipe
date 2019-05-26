@@ -22,17 +22,25 @@ namespace BookOfRecipes.Wpf
     public partial class RecipeList : Page
     {
         private Data data;
-
+        private Recipe selectedRecipe;
+        
         public RecipeList(Data data)
         {
             this.data = data;
-            InitializeComponent();
             Initialize();
         }
 
         private void Initialize()
         {
+            InitializeComponent();
             lstRecipeList.ItemsSource = data.Recipes;
+        }
+        
+        private void LstRecipeList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedRecipe = (Recipe)lstRecipeList.SelectedItem;
+            stpRecipeDetail.DataContext = selectedRecipe;
+            listIngredientPerRecipeList.ItemsSource = selectedRecipe.Ingredients;
         }
     }
 }
