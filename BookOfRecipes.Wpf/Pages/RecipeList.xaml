@@ -34,16 +34,22 @@
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ingredients:" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <ListView x:Name="listIngredientPerRecipeList" Margin="0,20,10,0" Width="450">
+                <ListView x:Name="listIngredientPerRecipeList" Margin="0,20,0,0" Width="450"
+                          Background="Transparent" BorderThickness="0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" Background="Aqua">
-                                <Label Content="{Binding Ingredient.Name}"/>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="{Binding Amount}"/>
-                                    <Label Content="{Binding Unit}"/>
+                            <Border BorderBrush="Gray" BorderThickness="1">
+                                <StackPanel Orientation="Horizontal" Width="430">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Label Content="{Binding Ingredient.Name}"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="{Binding Amount}"/>
+                                            <Label Content="{Binding Unit}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Button Content="Remove" HorizontalAlignment="Right" Click="ButtonBase_OnClick"/>
                                 </StackPanel>
-                            </StackPanel>
+                            </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

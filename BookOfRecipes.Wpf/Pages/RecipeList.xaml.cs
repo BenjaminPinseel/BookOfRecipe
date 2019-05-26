@@ -33,8 +33,7 @@ namespace BookOfRecipes.Wpf
         private void Initialize()
         {
             InitializeComponent();
-            lstRecipeList.ItemsSource = data.Recipes;  
-            
+            lstRecipeList.ItemsSource = data.Recipes;
         }
         
         // TODO: add git
@@ -43,6 +42,14 @@ namespace BookOfRecipes.Wpf
             selectedRecipe = (Recipe)lstRecipeList.SelectedItem;
             stpRecipeDetail.DataContext = selectedRecipe;
             listIngredientPerRecipeList.ItemsSource = selectedRecipe.Ingredients;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button) sender;
+            IngredientAmount amount = (IngredientAmount) button.DataContext;
+            selectedRecipe.Ingredients.Remove(amount);
+            listIngredientPerRecipeList.Items.Refresh();
         }
     }
 }
