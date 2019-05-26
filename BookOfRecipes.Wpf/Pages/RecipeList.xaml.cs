@@ -36,6 +36,7 @@ namespace BookOfRecipes.Wpf
             lstRecipeList.ItemsSource = data.Recipes;
         }
         
+        // TODO: add git
         private void LstRecipeList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedRecipe = (Recipe)lstRecipeList.SelectedItem;
