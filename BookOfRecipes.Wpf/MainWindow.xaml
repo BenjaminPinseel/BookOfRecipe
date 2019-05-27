@@ -5,13 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookOfRecipes.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1000">
-    <Grid>
-        <Frame x:Name="frmMainFrame" HorizontalAlignment="Left" Width="1000" Height="925" Margin="0,35,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
-        <Button Content="Recepten" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" VerticalAlignment="Top" Width="125" Click="BtnRecipes_Click"/>
-        <Button Content="Ingredienten" HorizontalAlignment="Left" Height="24" Margin="200,0,0,0" VerticalAlignment="Top" Width="125" Click="BtnIngredients_Click"/>
-        <Button Content="Ingredient Toevoegen" HorizontalAlignment="Left" Height="24" Margin="500,0,0,0" VerticalAlignment="Top" Width="125" Click="BtnAddIngredients_Click"/>
-        <Button Content="Opslaan" HorizontalAlignment="Left" Height="24" Margin="867,0,0,0" VerticalAlignment="Top" Width="125" Click="BtnSave_Click"/>
-        <Button Content="Laden" HorizontalAlignment="Left" Height="24" Margin="707,0,0,0" VerticalAlignment="Top" Width="125" Click="BtnLoad_Click"/>
-    </Grid>
+        Title="MainWindow" Width="800" Height="600">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="Home"/>
+            <MenuItem Header="_Recepten" Margin="5,0,0,0">
+                <MenuItem Header="_Weergeven" Click="BtnRecipes_Click"/>
+                <MenuItem Header="_Toevoegen"/>
+            </MenuItem>
+            <MenuItem Header="_Ingredienten" Margin="5,0,0,0" BorderThickness="1">
+                <MenuItem Header="_Weergeven" Click="BtnIngredients_Click"/>
+                <MenuItem Header="_Toevoegen" Click="BtnAddIngredients_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help" Margin="0,0,10,0" HorizontalAlignment="Right">
+                <MenuItem Header="_Openen" Click="BtnLoad_Click"/>
+                <MenuItem Header="_Opslaan" Click="BtnSave_Click"/>
+                <Separator/>
+                <MenuItem Header="_Afsluiten" Click="Close_OnClick"/>
+            </MenuItem>
+        </Menu>
+        <Frame DockPanel.Dock="Bottom" x:Name="frmMainFrame" HorizontalAlignment="Left" Width="800" Height="600" Margin="0,35,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+    </DockPanel>
 </Window>

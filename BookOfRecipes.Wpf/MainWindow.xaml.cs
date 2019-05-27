@@ -84,5 +84,10 @@ namespace BookOfRecipes.Wpf
         {
             frmMainFrame.NavigationService.Navigate(new RecipeList(data));
         }
+
+        private void Close_OnClick(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

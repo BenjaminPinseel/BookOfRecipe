@@ -7,11 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RecipeList"
-      Width="1000"
-      Height="925">
+      Width="800"
+      Height="600">
 
-    <StackPanel Height="925" Orientation="Horizontal">
-        <ListView x:Name="lstRecipeList" HorizontalAlignment="Left" Width="240" Height="925" VerticalAlignment="Top" 
+    <StackPanel Width="800" Height="600" Orientation="Horizontal">
+        <ListView x:Name="lstRecipeList" Margin="10,0,0,0" HorizontalAlignment="Left" Width="240" Height="500" VerticalAlignment="Top" 
                   SelectionChanged="LstRecipeList_OnSelectionChanged">
             <ListView.View>
                 <GridView>
@@ -19,36 +19,44 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel x:Name="stpRecipeDetail" Width="562" Height="925">
+        <StackPanel x:Name="stpRecipeDetail" Width="560" Height="600">
             <Label Content="Recept" FontSize="30" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Naam" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <TextBox Text="{Binding Name}" Height="30" HorizontalAlignment="Right" Width="450" 
+                <TextBox Text="{Binding Name}" Height="30" HorizontalAlignment="Right" Width="400" 
                          Margin="0,20,10,0" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Beschrijving" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <TextBox Text="{Binding Description}" Height="30" HorizontalAlignment="Right" Width="450" 
+                <TextBox Text="{Binding Description}" Height="30" HorizontalAlignment="Right" Width="400" 
                          Margin="0,20,10,0" VerticalAlignment="Center"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ingredients:" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <ListView x:Name="listIngredientPerRecipeList" Margin="0,20,0,0" Width="450"
+                <ListView x:Name="listIngredientPerRecipeList" Margin="0,20,0,0" Width="400"
                           Background="Transparent" BorderThickness="0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="Gray" BorderThickness="1">
-                                <StackPanel Orientation="Horizontal" Width="430">
-                                    <StackPanel Orientation="Vertical" >
-                                        <Label Content="{Binding Ingredient.Name}"/>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="{Binding Amount}"/>
-                                            <Label Content="{Binding Unit}"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                    <Button Content="Remove" HorizontalAlignment="Right" Click="ButtonBase_OnClick"/>
-                                </StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="235"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding Ingredient.Name}"/>
+                                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Amount}"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Unit}"/>
+                                    <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Content="x" 
+                                            HorizontalAlignment="Right" Click="ButtonBase_OnClick"
+                                            Width="40" Height="40" Margin="0,0,5,0" BorderThickness="0"/>
+                                </Grid>
+
                             </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
