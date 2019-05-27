@@ -75,5 +75,10 @@ namespace BookOfRecipes.Wpf
         {
             Environment.Exit(0);
         }
+
+        private void BtnNewRecipe_Clicked(object sender, RoutedEventArgs e)
+        {
+            frmMainFrame.NavigationService.Navigate(new NewRecipe(frmMainFrame.NavigationService, data));
+        }
     }
 }

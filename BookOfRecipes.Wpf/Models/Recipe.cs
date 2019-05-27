@@ -10,7 +10,6 @@ namespace BookOfRecipes.Wpf.Models
     public class Recipe
     {
         public string Name { get; set; }
-        public string Description { get; set; }
 
         public string Preparation { get; set; }
 
@@ -46,10 +45,9 @@ namespace BookOfRecipes.Wpf.Models
         {
         }
 
-        public Recipe(string name, string description, string preparation, List<IngredientAmount> ingredients)
+        public Recipe(string name, string preparation, List<IngredientAmount> ingredients)
         {
             Name = name;
-            Description = description;
             Preparation = preparation;
             Ingredients = ingredients;
         }

@@ -17,7 +17,7 @@
             <MenuItem Header="Home"/>
             <MenuItem Header="_Recepten" Margin="5,0,0,0">
                 <MenuItem Header="_Weergeven" Click="BtnRecipes_Click"/>
-                <MenuItem Header="_Toevoegen"/>
+                <MenuItem Header="_Toevoegen" Click="BtnNewRecipe_Clicked"/>
             </MenuItem>
             <MenuItem Header="_Ingredienten" Margin="5,0,0,0" BorderThickness="1">
                 <MenuItem Header="_Weergeven" Click="BtnIngredients_Click"/>
