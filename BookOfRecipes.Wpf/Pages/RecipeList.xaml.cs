@@ -50,6 +50,16 @@ namespace BookOfRecipes.Wpf
             IngredientAmount amount = (IngredientAmount) button.DataContext;
             selectedRecipe.Ingredients.Remove(amount);
             listIngredientPerRecipeList.Items.Refresh();
+            UpdateNutrition();
+        }
+
+        private void UpdateNutrition()
+        {
+            caloriesTxt.Text = selectedRecipe.Calories.ToString();
+            fatTxt.Text = selectedRecipe.Fat.ToString();
+            carbsTxt.Text = selectedRecipe.Carbs.ToString();
+            proteinsTxt.Text = selectedRecipe.Proteins.ToString();
+            priceTxt.Text = selectedRecipe.Price;
         }
     }
 }

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookOfRecipes.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Width="800" Height="600">
-    <DockPanel>
+        Title="MainWindow" Width="800" Height="800"
+        ResizeMode="NoResize">
+    <StackPanel Width="800" Height="800">
         <Menu DockPanel.Dock="Top">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -22,13 +23,15 @@
                 <MenuItem Header="_Weergeven" Click="BtnIngredients_Click"/>
                 <MenuItem Header="_Toevoegen" Click="BtnAddIngredients_Click"/>
             </MenuItem>
-            <MenuItem Header="Help" Margin="0,0,10,0" HorizontalAlignment="Right">
+            <MenuItem Header="Help" Margin="0,0,30,0" HorizontalAlignment="Right">
                 <MenuItem Header="_Openen" Click="BtnLoad_Click"/>
                 <MenuItem Header="_Opslaan" Click="BtnSave_Click"/>
                 <Separator/>
                 <MenuItem Header="_Afsluiten" Click="Close_OnClick"/>
             </MenuItem>
         </Menu>
-        <Frame DockPanel.Dock="Bottom" x:Name="frmMainFrame" HorizontalAlignment="Left" Width="800" Height="600" Margin="0,35,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
-    </DockPanel>
+        <Frame x:Name="frmMainFrame" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Width="800" Height="800" Margin="0,35,0,0" 
+               NavigationUIVisibility="Hidden"/>
+    </StackPanel>
 </Window>

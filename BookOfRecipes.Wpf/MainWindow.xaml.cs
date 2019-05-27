@@ -73,7 +73,7 @@ namespace BookOfRecipes.Wpf
             IngredientAmount aantalTomaat = new IngredientAmount(tomaat, 300, "gram");
             IngredientAmount aantalGarnaal = new IngredientAmount(garnaal, 100, "gram");
 
-            IngredientAmount[] ingredienten = new IngredientAmount[] {aantalGarnaal, aantalTomaat};
+            IngredientAmount[] ingredienten = new IngredientAmount[] {aantalGarnaal, aantalTomaat, aantalGarnaal, aantalGarnaal, aantalGarnaal};
             Recipe tomaatGarnaal = new Recipe("Tomaat Garnaal","Overheerlijk recept !", ingredienten.ToList());
             
             data.Recipes.Add(tomaatGarnaal);

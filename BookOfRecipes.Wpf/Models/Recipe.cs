@@ -9,28 +9,112 @@ namespace BookOfRecipes.Wpf.Models
 {
     public class Recipe
     {
+        private List<IngredientAmount> ingredientAmounts = new List<IngredientAmount>();
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<IngredientAmount> Ingredients { get; set; }
+
+        public List<IngredientAmount> Ingredients
+        {
+            get { return ingredientAmounts; }
+        }
 
         public string Price
         {
-            get { return "€€€"; }
+            get { return CalculatePrice(); }
         }
 
-        public int Carbs { get; }
-        public int Calories { get;  }
-        public int Proteins { get; }
-        public int Fat { get; }
+        public int Carbs
+        {
+            get
+            {
+                int total = 0;
+                foreach (IngredientAmount amount in Ingredients)
+                {
+                    total += amount.Ingredient.Carbs * amount.Amount;
+                }
 
-        // Voor json
-        public Recipe() { }
+                return total;
+            }
+        }
+
+        public int Calories
+        {
+            get
+            {
+                int total = 0;
+                foreach (IngredientAmount amount in Ingredients)
+                {
+                    total += amount.Ingredient.Calories * amount.Amount;
+                }
+
+                return total;
+            }
+        }
+
+        public int Proteins
+        {
+            get
+            {
+                int total = 0;
+                foreach (IngredientAmount amount in Ingredients)
+                {
+                    total += amount.Ingredient.Proteins * amount.Amount;
+                }
+
+                return total;
+            }
+        }
+
+        public int Fat
+        {
+            get
+            {
+                int total = 0;
+                foreach (IngredientAmount amount in Ingredients)
+                {
+                    total += amount.Ingredient.Fat * amount.Amount;
+                }
+
+                return total;
+            }
+        }
+
+// Voor json
+        public Recipe()
+        {
+        }
 
         public Recipe(string name, string description, List<IngredientAmount> ingredients)
         {
             Name = name;
             Description = description;
-            Ingredients = ingredients;
+            ingredientAmounts = ingredients;
+        }
+
+        private string CalculatePrice()
+        {
+            int total = 0;
+            foreach (IngredientAmount amount in Ingredients)
+            {
+                total += amount.Ingredient.Price * amount.Amount;
+            }
+
+            if (total < 5)
+            {
+                return "€";
+            }
+
+            if (total < 10)
+            {
+                return "€€";
+            }
+
+            if (total < 20)
+            {
+                return "€€€";
+            }
+
+            return "€€€€";
         }
     }
 }
