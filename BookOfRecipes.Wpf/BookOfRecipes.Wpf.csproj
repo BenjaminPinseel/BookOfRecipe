@@ -68,6 +68,9 @@
     <Compile Include="Pages\NewIngredient.xaml.cs">
       <DependentUpon>NewIngredient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewRecipe.xaml.cs">
+      <DependentUpon>NewRecipe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RecipeList.xaml.cs">
       <DependentUpon>RecipeList.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NewRecipe.xaml" />
     <Page Include="Pages\RecipeList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

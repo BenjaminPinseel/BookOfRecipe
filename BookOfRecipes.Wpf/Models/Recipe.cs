@@ -9,14 +9,12 @@ namespace BookOfRecipes.Wpf.Models
 {
     public class Recipe
     {
-        private List<IngredientAmount> ingredientAmounts = new List<IngredientAmount>();
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public List<IngredientAmount> Ingredients
-        {
-            get { return ingredientAmounts; }
-        }
+        public string Preparation { get; set; }
+
+        public List<IngredientAmount> Ingredients { get; set; }
 
         public string Price
         {
@@ -25,58 +23,22 @@ namespace BookOfRecipes.Wpf.Models
 
         public int Carbs
         {
-            get
-            {
-                int total = 0;
-                foreach (IngredientAmount amount in Ingredients)
-                {
-                    total += amount.Ingredient.Carbs * amount.Amount;
-                }
-
-                return total;
-            }
+            get { return CalculateTotalCarbs(); }
         }
 
         public int Calories
         {
-            get
-            {
-                int total = 0;
-                foreach (IngredientAmount amount in Ingredients)
-                {
-                    total += amount.Ingredient.Calories * amount.Amount;
-                }
-
-                return total;
-            }
+            get { return CalculateTotalCalories(); }
         }
 
         public int Proteins
         {
-            get
-            {
-                int total = 0;
-                foreach (IngredientAmount amount in Ingredients)
-                {
-                    total += amount.Ingredient.Proteins * amount.Amount;
-                }
-
-                return total;
-            }
+            get { return CalculateTotalProteins(); }
         }
 
         public int Fat
         {
-            get
-            {
-                int total = 0;
-                foreach (IngredientAmount amount in Ingredients)
-                {
-                    total += amount.Ingredient.Fat * amount.Amount;
-                }
-
-                return total;
-            }
+            get { return CalculateTotalFat(); }
         }
 
 // Voor json
@@ -84,13 +46,15 @@ namespace BookOfRecipes.Wpf.Models
         {
         }
 
-        public Recipe(string name, string description, List<IngredientAmount> ingredients)
+        public Recipe(string name, string description, string preparation, List<IngredientAmount> ingredients)
         {
             Name = name;
             Description = description;
-            ingredientAmounts = ingredients;
+            Preparation = preparation;
+            Ingredients = ingredients;
         }
 
+        
         private string CalculatePrice()
         {
             int total = 0;
@@ -115,6 +79,50 @@ namespace BookOfRecipes.Wpf.Models
             }
 
             return "€€€€";
+        }
+
+        private int CalculateTotalCarbs()
+        {
+            int total = 0;
+            foreach (IngredientAmount amount in Ingredients)
+            {
+                total += amount.Ingredient.Carbs * amount.Amount;
+            }
+
+            return total;
+        }
+        
+        private int CalculateTotalCalories()
+        {
+            int total = 0;
+            foreach (IngredientAmount amount in Ingredients)
+            {
+                total += amount.Ingredient.Calories * amount.Amount;
+            }
+
+            return total;
+        }
+        
+        private int CalculateTotalFat()
+        {
+            int total = 0;
+            foreach (IngredientAmount amount in Ingredients)
+            {
+                total += amount.Ingredient.Fat * amount.Amount;
+            }
+
+            return total;
+        }
+        
+        private int CalculateTotalProteins()
+        {
+            int total = 0;
+            foreach (IngredientAmount amount in Ingredients)
+            {
+                total += amount.Ingredient.Proteins * amount.Amount;
+            }
+
+            return total;
         }
     }
 }

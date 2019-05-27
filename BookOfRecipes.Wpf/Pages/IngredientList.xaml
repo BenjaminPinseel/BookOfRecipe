@@ -7,17 +7,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="IngredientList"
-      Width="800" Height="600">
-    <StackPanel Width="800" Height="600" Orientation="Horizontal">
-        <ListView x:Name="lstIngredientsList" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                  Width="240" Height="500" SelectionChanged="LstIngredientsList_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Naam" Width="230" DisplayMemberBinding="{Binding Name}"/>
-                </GridView>
-            </ListView.View>
+      Width="800" Height="800">
+    <StackPanel Width="800" Height="800" Orientation="Horizontal">
+        <ListView x:Name="lstIngredientsList" Margin="10,0,0,0" Width="240" Height="700" VerticalAlignment="Top" 
+                   SelectionChanged="LstIngredientsList_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <StackPanel x:Name="stpIngredientStack" Width="560" Height="600">
+        <StackPanel x:Name="stpIngredientStack" Width="560" Height="600" VerticalAlignment="Top">
             <Label Content="Ingredient" FontSize="30" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Naam" Width="100" HorizontalAlignment="Left" Margin="0,20,0,0"/>
@@ -44,7 +44,6 @@
                 <TextBox Text="{Binding Price}" Height="30" Width="400" HorizontalAlignment="Right" Margin="0,20,10,0" />
             </StackPanel>
             <Button x:Name="btnDeleteIngredient" Width="400" Content="Verwijder" Margin="40,20,0,0" Click="DeleteIngredient_Click" />
-
         </StackPanel>
     </StackPanel>
 </Page>

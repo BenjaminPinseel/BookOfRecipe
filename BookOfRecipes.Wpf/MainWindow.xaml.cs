@@ -63,20 +63,6 @@ namespace BookOfRecipes.Wpf
             {
                 data = fileHandling.Load(openFileDialog.FileName);
             }
-
-            Ingredient tomaat = new Ingredient("Tomaat", 1, 5, 50,2,3); 
-            Ingredient garnaal = new Ingredient("Garnaal", 10, 0, 100,2,3); 
-            
-            data.Ingredients.Add(tomaat);
-            data.Ingredients.Add(garnaal);
-            
-            IngredientAmount aantalTomaat = new IngredientAmount(tomaat, 300, "gram");
-            IngredientAmount aantalGarnaal = new IngredientAmount(garnaal, 100, "gram");
-
-            IngredientAmount[] ingredienten = new IngredientAmount[] {aantalGarnaal, aantalTomaat, aantalGarnaal, aantalGarnaal, aantalGarnaal};
-            Recipe tomaatGarnaal = new Recipe("Tomaat Garnaal","Overheerlijk recept !", ingredienten.ToList());
-            
-            data.Recipes.Add(tomaatGarnaal);
             OpenRecipeView();
         }
 
