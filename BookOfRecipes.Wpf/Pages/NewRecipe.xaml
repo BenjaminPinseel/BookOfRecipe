@@ -26,19 +26,18 @@
                          HorizontalScrollBarVisibility="Disabled"
                          VerticalScrollBarVisibility="Auto" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="100">
+            <StackPanel Orientation="Horizontal" Height="70">
                 <Label Content="Ingredients:" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"
                        Margin="0,20,0,0" />
                 <Button Margin="0,20,0,0" Width="450" Content="Add" VerticalAlignment="Top"
                         Height="30" Click="AddIngredient_OnClick" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <ListView x:Name="listIngredientPerRecipeList" Width="450"
-                          Background="Transparent" BorderThickness="0" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="100,0,0,0" >
+                <ListView x:Name="listIngredientPerRecipeList" Width="450" Height="200" Background="Transparent" BorderThickness="0" VerticalAlignment="Top">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="Gray" BorderThickness="1">
-                                <Grid Margin="100,0,0,0" >
+                                <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60" />
                                         <ColumnDefinition Width="60" />
@@ -49,8 +48,9 @@
                                         <RowDefinition Height="30" />
                                     </Grid.RowDefinitions>
 
-                                    <TextBox Grid.Row="0" Grid.ColumnSpan="2" Margin="10,0,0,0"
-                                             VerticalAlignment="Center" Text="{Binding Ingredient.Name}" />
+                                    <ComboBox x:Name="lstTest" Grid.Row="0" Grid.ColumnSpan="2" Margin="10,0,0,0"
+                                             VerticalAlignment="Center"
+                                             DisplayMemberPath="{Binding Name}"/>
                                     <TextBox Grid.Row="1" Grid.Column="0" Margin="10,0,0,0"
                                              VerticalAlignment="Center" Text="{Binding Amount}" />
                                     <ComboBox Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"
