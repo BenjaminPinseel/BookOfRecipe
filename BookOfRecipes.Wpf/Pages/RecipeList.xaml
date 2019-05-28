@@ -31,31 +31,31 @@
                 
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="Prijs" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
-                    <TextBox x:Name= "priceTxt" Text="{Binding Price, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
+                    <Label x:Name= "priceTxt" Content="{Binding Price, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
                              Margin="0,20,10,0"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="Calorieen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
-                    <TextBox x:Name= "caloriesTxt" Text="{Binding Calories, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
+                    <Label x:Name= "caloriesTxt" Content="{Binding Calories, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
                              Margin="0,20,10,0"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="Vet" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
-                    <TextBox x:Name= "fatTxt" Text="{Binding Fat, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
+                    <Label x:Name= "fatTxt" Content="{Binding Fat, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
                              Margin="0,20,10,0"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="Proteinen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
-                    <TextBox x:Name="proteinsTxt" Text="{Binding Proteins, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
+                    <Label x:Name="proteinsTxt" Content="{Binding Proteins, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
                              Margin="0,20,10,0"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="Koolhydraten" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
-                    <TextBox x:Name= "carbsTxt" Text="{Binding Carbs, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
+                    <Label x:Name= "carbsTxt" Content="{Binding Carbs, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
                              Margin="0,20,10,0"/>
                 </StackPanel>
                 

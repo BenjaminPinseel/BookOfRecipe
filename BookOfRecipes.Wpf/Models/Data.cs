@@ -16,5 +16,18 @@ namespace BookOfRecipes.Wpf.Models
             Ingredients = new List<Ingredient>();
             Recipes = new List<Recipe>();
         }
+
+        public Ingredient GetIngredientByName(string name)
+        {
+            Ingredient found = null;
+            foreach (Ingredient ingredient in Ingredients)
+            {
+                if (name.Equals(ingredient.Name))
+                {
+                    found = ingredient;
+                }
+            }
+            return found;
+        }
     }
 }

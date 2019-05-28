@@ -55,11 +55,11 @@ namespace BookOfRecipes.Wpf
 
         private void UpdateNutrition()
         {
-            caloriesTxt.Text = selectedRecipe.Calories.ToString();
-            fatTxt.Text = selectedRecipe.Fat.ToString();
-            carbsTxt.Text = selectedRecipe.Carbs.ToString();
-            proteinsTxt.Text = selectedRecipe.Proteins.ToString();
-            priceTxt.Text = selectedRecipe.Price;
+            caloriesTxt.Content = selectedRecipe.Calories.ToString();
+            fatTxt.Content = selectedRecipe.Fat.ToString();
+            carbsTxt.Content = selectedRecipe.Carbs.ToString();
+            proteinsTxt.Content = selectedRecipe.Proteins.ToString();
+            priceTxt.Content = selectedRecipe.Price;
         }
     }
 }
