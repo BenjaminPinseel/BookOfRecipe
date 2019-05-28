@@ -29,6 +29,7 @@ namespace BookOfRecipes.Wpf
             this.data = data;
             Initialize(); 
         }
+        
         private void Initialize()
         {
             InitializeComponent();

@@ -28,7 +28,7 @@ namespace BookOfRecipes.Wpf
         private void Initialize()
         {
             InitializeComponent();
-            OpenRecipeView();
+            OpenHomeView();
         }
 
         private void BtnRecipes_Click(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace BookOfRecipes.Wpf
             {
                 fileHandling.Save(saveFileDialog.FileName, data);
             }
-            OpenRecipeView();
+            OpenHomeView();
         }
         
         private void BtnLoad_Click(object sender, RoutedEventArgs e)
@@ -63,12 +63,12 @@ namespace BookOfRecipes.Wpf
             {
                 data = fileHandling.Load(openFileDialog.FileName);
             }
-            OpenRecipeView();
+            OpenHomeView();
         }
 
-        private void OpenRecipeView()
+        private void OpenHomeView()
         {
-            frmMainFrame.NavigationService.Navigate(new RecipeList(data));
+            frmMainFrame.NavigationService.Navigate(new Home());
         }
 
         private void Close_OnClick(object sender, RoutedEventArgs e)
@@ -79,6 +79,11 @@ namespace BookOfRecipes.Wpf
         private void BtnNewRecipe_Clicked(object sender, RoutedEventArgs e)
         {
             frmMainFrame.NavigationService.Navigate(new NewRecipe(frmMainFrame.NavigationService, data));
+        }
+
+        private void Home_OnClick(object sender, RoutedEventArgs e)
+        {
+            frmMainFrame.NavigationService.Navigate(new Home());
         }
     }
 }

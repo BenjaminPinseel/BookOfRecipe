@@ -8,13 +8,13 @@
         Title="MainWindow" Width="800" Height="800"
         ResizeMode="NoResize">
     <StackPanel Width="800" Height="800">
-        <Menu DockPanel.Dock="Top">
+        <Menu>
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <DockPanel HorizontalAlignment="Stretch"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem Header="Home"/>
+            <MenuItem Header="_Home" Click="Home_OnClick"/>
             <MenuItem Header="_Recepten" Margin="5,0,0,0">
                 <MenuItem Header="_Weergeven" Click="BtnRecipes_Click"/>
                 <MenuItem Header="_Toevoegen" Click="BtnNewRecipe_Clicked"/>
@@ -23,7 +23,7 @@
                 <MenuItem Header="_Weergeven" Click="BtnIngredients_Click"/>
                 <MenuItem Header="_Toevoegen" Click="BtnAddIngredients_Click"/>
             </MenuItem>
-            <MenuItem Header="Help" Margin="0,0,30,0" HorizontalAlignment="Right">
+            <MenuItem Header="Opties" Margin="0,0,30,0" HorizontalAlignment="Right">
                 <MenuItem Header="_Openen" Click="BtnLoad_Click"/>
                 <MenuItem Header="_Opslaan" Click="BtnSave_Click"/>
                 <Separator/>

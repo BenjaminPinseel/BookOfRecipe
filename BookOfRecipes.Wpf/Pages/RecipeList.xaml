@@ -23,40 +23,40 @@
             <StackPanel x:Name="stpRecipeDetail" Width="560" Height="600" VerticalAlignment="Top">
                 <Label Content="Recept" FontSize="30" HorizontalAlignment="Center"/>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Naam" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Naam" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <TextBox Text="{Binding Name}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Prijs" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Prijs" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <Label x:Name= "priceTxt" Content="{Binding Price, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Calorieen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Calorieen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <Label x:Name= "caloriesTxt" Content="{Binding Calories, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Vet" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Vet" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <Label x:Name= "fatTxt" Content="{Binding Fat, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Proteinen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Proteinen" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <Label x:Name="proteinsTxt" Content="{Binding Proteins, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="Koolhydraten" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20,0,0"/>
+                <StackPanel Orientation="Horizontal" Height="40">
+                    <Label Content="Koolhydraten" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0"/>
                     <Label x:Name= "carbsTxt" Content="{Binding Carbs, Mode=OneWay}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" 
-                             Margin="0,20,10,0"/>
+                             Margin="0,10,10,0"/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" Height="100">
@@ -91,7 +91,7 @@
                                         <TextBox Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Center" Text="{Binding Amount}"/>
                                         <Label Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center" Content="{Binding Unit}"/>
                                         <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Content="x" 
-                                                HorizontalAlignment="Right" Click="ButtonBase_OnClick"
+                                                HorizontalAlignment="Right" Click="IngredientRemove_OnClick"
                                                 Width="40" Height="40" Margin="0,0,5,0" BorderThickness="0"/>
                                     </Grid>
                                 </Border>
@@ -99,6 +99,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
+                <Button x:Name="btnDeleteRecipe" Width="400" Content="Verwijder" Margin="40,20,0,0" Click="BtnDeleteRecipe_OnClick" />
             </StackPanel>
         </ScrollViewer>
     </StackPanel>

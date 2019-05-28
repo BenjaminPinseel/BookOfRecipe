@@ -34,17 +34,26 @@ namespace BookOfRecipes.Wpf
         {
             InitializeComponent();
             lstRecipeList.ItemsSource = data.Recipes;
+            btnDeleteRecipe.IsEnabled = false;
         }
         
-        // TODO: add git
         private void LstRecipeList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedRecipe = (Recipe)lstRecipeList.SelectedItem;
             stpRecipeDetail.DataContext = selectedRecipe;
-            listIngredientPerRecipeList.ItemsSource = selectedRecipe.Ingredients;
+            if (selectedRecipe != null)
+            {
+                listIngredientPerRecipeList.ItemsSource = selectedRecipe.Ingredients;
+                btnDeleteRecipe.IsEnabled = true;
+            }
+            else
+            {
+                listIngredientPerRecipeList.ItemsSource = null;
+                btnDeleteRecipe.IsEnabled = false;
+            }
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void IngredientRemove_OnClick(object sender, RoutedEventArgs e)
         {
             Button button = (Button) sender;
             IngredientAmount amount = (IngredientAmount) button.DataContext;
@@ -60,6 +69,12 @@ namespace BookOfRecipes.Wpf
             carbsTxt.Content = selectedRecipe.Carbs.ToString();
             proteinsTxt.Content = selectedRecipe.Proteins.ToString();
             priceTxt.Content = selectedRecipe.Price;
+        }
+
+        private void BtnDeleteRecipe_OnClick(object sender, RoutedEventArgs e)
+        {
+            data.Recipes.Remove(selectedRecipe);
+            lstRecipeList.Items.Refresh();
         }
     }
 }

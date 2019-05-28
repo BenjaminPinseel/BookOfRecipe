@@ -12,7 +12,7 @@ namespace BookOfRecipes.Wpf.Pages
         private Data data;
         private NavigationService navigationService;
         private List<IngredientAmount> ingredientAmount = new List<IngredientAmount>();
-         private string[] validUnits = {"g", "kg", "l", "ml"};
+        private string[] validUnits = {"g", "kg", "l", "ml"};
      
         public NewRecipe(NavigationService navigationService, Data data)
         {
@@ -40,7 +40,7 @@ namespace BookOfRecipes.Wpf.Pages
 
         private void AddIngredient_OnClick(object sender, RoutedEventArgs e)
         {
-            string unit = (string) cmbIngredients.SelectedItem;
+            string unit = (string) cmbUnits.SelectedItem;
             string ingredientName = (string) cmbIngredients.SelectedItem;
             int amount = int.Parse(txtAmount.Text);
             Ingredient selectedIngredient = data.GetIngredientByName(ingredientName);
@@ -67,7 +67,6 @@ namespace BookOfRecipes.Wpf.Pages
             return names;
         }
         
-
         private void TxtAmount_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             ChangeIngredientButtonState();
@@ -87,6 +86,7 @@ namespace BookOfRecipes.Wpf.Pages
         {
             btnIngredientAdd.IsEnabled = IngredientValid();
         }
+        
         private bool IngredientValid()
         {
             string ingredientName = (string) cmbIngredients.SelectedItem;
