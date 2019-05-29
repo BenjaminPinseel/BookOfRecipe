@@ -9,6 +9,6 @@
       Title="IngredientList"
       Width="800" Height="800">
     <StackPanel Width="800" Height="800" Orientation="Vertical">
-        <Label Margin="0,100,0,0" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Welkom in mijn receptenboek.&#xD;&#xA;Gelieve een bestand in te laden via de knop 'Opties'&#xD;&#xA; rechtsbovenaan.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Opgelet, bij het opslaan, zorg ervoor dat de nieuwe locatie niet&#xD;&#xA; in het project is." FontSize="26" Margin="20,100,25,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="750"/>
     </StackPanel>
 </Page>
